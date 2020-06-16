@@ -1,3 +1,3 @@
 # CirclesAnimation
 
-![](https://xfx.net/stackoverflow/circles_animation/CirclesAnimation01.png)
+![](https://xfx.net/stackoverflow/circles_animation/CirclesAnimation03.png)
