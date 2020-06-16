@@ -16,7 +16,7 @@ namespace CirclesAnimation {
         private const double ToRad = Math.PI / 180.0;
         private const double ToDeg = 180.0 / Math.PI;
 
-        private float n = 1;
+        private float n = 10;
 
         private bool showLines = true;
         private bool showMainPoint = true;
@@ -103,14 +103,6 @@ namespace CirclesAnimation {
 
             g.TranslateTransform(w2, h2);
 
-            if(showMainPoint) {
-                x = (float)(r * Math.Cos(angle));
-                y = (float)(-r * Math.Sin(angle));
-                g.FillEllipse(Brushes.Yellow, x - cr2, y - cr2, cr, cr);
-            }
-
-            if(showCircle) g.DrawEllipse(Pens.Green, -r, -r, 2 * r, 2 * r);
-
             if(showDandingCircles) {
                 for(int i = 0; i < n; i++) {
                     a = (float)(Math.PI * (i / n));
@@ -121,6 +113,14 @@ namespace CirclesAnimation {
                     g.RotateTransform(-(float)(a * ToDeg));
                 }
             }
+
+            if(showMainPoint) {
+                x = (float)(r * Math.Cos(angle));
+                y = (float)(-r * Math.Sin(angle));
+                g.FillEllipse(Brushes.Yellow, x - cr2, y - cr2, cr, cr);
+            }
+
+            if(showCircle) g.DrawEllipse(Pens.Green, -r, -r, 2 * r, 2 * r);
 
             angle += 2.5 * ToRad;
         }
